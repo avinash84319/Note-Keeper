@@ -1,10 +1,9 @@
 import React from "react";
-import { ReactDOM } from "react";
+import ReactDOM from "react-dom"
 import App from "./App";
 
 ReactDOM.render(
     <App />
-
     ,document.getElementById("root"));
 //3. Create a Header.jsx component that renders a <header> element
 //to show the Keeper App name in an <h1>.
