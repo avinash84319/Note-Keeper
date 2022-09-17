@@ -5,8 +5,7 @@ import Footer from "./Footer";
 import notes from "./notes";
 
 function note(c){
-    return 
-    <Note 
+    return <Note 
         key = {c.id}
         title = {c.title}
         content = {c.content}
