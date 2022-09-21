@@ -34,11 +34,15 @@ function App() {
             }
         );
     }
+    function handleClick(event){
+       setaddnote(prevaddnotes=>({addnote,...prevaddnotes}))
+    }
+
 
     
 return <div>
     <Header />
-    <form>
+    <form onSubmit={handleClick}>
     <input onChange={handleChange} type="textarea" placeholder="title" name="title"></input>
     <input onChange={handleChange} type="textarea" placeholder="content" name="content"></input>
     <button>+</button>
