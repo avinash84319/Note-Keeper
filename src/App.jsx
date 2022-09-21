@@ -13,6 +13,11 @@ function note(c){
 }
 function App() {
     const[addnote,setaddnote]=useState([]);
+    function handleChange(){
+        setaddnote(
+            
+        );
+    }
 
     
 return <div>
