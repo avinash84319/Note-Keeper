@@ -5,6 +5,7 @@ import Footer from "./Footer";
 import notes from "./notes";
 
 function note(c){
+    
     return <Note 
         title = {c.title}
         content = {c.content}
@@ -12,42 +13,48 @@ function note(c){
     
 }
 function App() {
-    const[addnote,setaddnote]=useState([]);
+    const[addnote,setaddnote]=useState([{
+        title:"",
+        content:""
+    }]);
+    const[note1,setnote1]=useState(notes);
     function handleChange(event){
         const value=event.target.value;
         const name=event.target.name;
-        setaddnote(
-            function da(){
-            const prevaddnotes = addnote;
-            if(name==title){
-                return {
+        setaddnote(prevaddnotes=>{
+            if(name=="title"){
+                return [{ 
                     title:value,
                     content:prevaddnotes.content
-                }
+                }]
             }
             else{
-                return {
+               return [{
                     title:prevaddnotes.title,
                     content:value
-                }
+                }]
             }
             }
         );
     }
     function handleClick(event){
-       setaddnote(prevaddnotes=>({addnote,...prevaddnotes}))
+        setnote1(
+           [ ...note1,...addnote]
+        )
+        event.preventDefault();
     }
+   
 
 
     
 return <div>
     <Header />
-    <form onSubmit={handleClick}>
-    <input onChange={handleChange} type="textarea" placeholder="title" name="title"></input>
-    <input onChange={handleChange} type="textarea" placeholder="content" name="content"></input>
-    <button>+</button>
+    <form>
+    <input onChange={handleChange} type="textarea" placeholder="title" name="title" value={addnote.title}></input>
+    <textarea onChange={handleChange}  placeholder="content" name="content" value={addnote.content}></textarea>
+    <button onClick={handleClick}>+</button>
     </form>
-    {addnote.map(note)}
+    {note1.map(note)}
     <Footer />
 </div>
 }
