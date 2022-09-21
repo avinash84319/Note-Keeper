@@ -13,9 +13,25 @@ function note(c){
 }
 function App() {
     const[addnote,setaddnote]=useState([]);
-    function handleChange(){
+    function handleChange(event){
+        const value=event.target.value;
+        const name=event.target.name;
         setaddnote(
-            
+            function da(){
+            const prevaddnotes = addnote;
+            if(name==title){
+                return {
+                    title:value,
+                    content:prevaddnotes.content
+                }
+            }
+            else{
+                return {
+                    title:prevaddnotes.title,
+                    content:value
+                }
+            }
+            }
         );
     }
 
