@@ -15,7 +15,12 @@ function note(c){
 function App() {
 return <div>
     <Header />
-    {notes.map(note)}
+    <form>
+    <input type="textarea" placeholder="title" name="title"></input>
+    <input type="textarea" placeholder="content" name="content"></input>
+    <button>+</button>
+    </form>
+    {addnote.map(note)}
     <Footer />
 </div>
 }
