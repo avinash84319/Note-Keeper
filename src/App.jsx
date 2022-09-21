@@ -41,6 +41,10 @@ function App() {
         setnote1(
            [ ...note1,...[addnote]]
         )
+        setaddnote({
+            title:"",
+            content:""
+        })
         
     }
    
