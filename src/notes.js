@@ -1,20 +1,8 @@
 const notes=[
     {
         id:1,
-        title : "abcsjnlnalnfaesjfnasn",
-        content : "dfajnsjfnsdnajnfdns"
-    }
-    ,
-    {
-        id:2,
-        title : "ahsbgahsbdbsdhfhbso",
-        content : "sdjaskdbSFsf"
-    }
-,
-    {
-        id:1,
-        title : "asdfasd",
-        content : "fhjkfjhkfhj"
+        title : "ddefault note",
+        content : "hi i am author avinash reddy c took help of angella yu in creating this react app"
     }
 ]
 

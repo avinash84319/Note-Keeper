@@ -13,35 +13,35 @@ function note(c){
     
 }
 function App() {
-    const[addnote,setaddnote]=useState([{
+    const[addnote,setaddnote]=useState({
         title:"",
         content:""
-    }]);
+    });
     const[note1,setnote1]=useState(notes);
     function handleChange(event){
         const value=event.target.value;
         const name=event.target.name;
         setaddnote(prevaddnotes=>{
             if(name=="title"){
-                return [{ 
+                return { 
                     title:value,
                     content:prevaddnotes.content
-                }]
+                }
             }
             else{
-               return [{
+               return {
                     title:prevaddnotes.title,
                     content:value
-                }]
+                }
             }
             }
         );
     }
     function handleClick(event){
         setnote1(
-           [ ...note1,...addnote]
+           [ ...note1,...[addnote]]
         )
-        event.preventDefault();
+        
     }
    
 
@@ -52,7 +52,7 @@ return <div>
     <form>
     <input onChange={handleChange} type="textarea" placeholder="title" name="title" value={addnote.title}></input>
     <textarea onChange={handleChange}  placeholder="content" name="content" value={addnote.content}></textarea>
-    <button onClick={handleClick}>+</button>
+    <button onClick={handleClick} type="button">+</button>
     </form>
     {note1.map(note)}
     <Footer />
